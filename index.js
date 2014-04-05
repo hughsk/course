@@ -42,7 +42,7 @@ function createRouter() {
   function router(req, res, done) {
     var path = url.parse(req.url)
       .pathname
-      .replace(regex.trailingSlash, '')
+      .replace(regex.trailingSlash, '') || '/'
 
     var start = matches(path, req, res)
     var length = routes.length
